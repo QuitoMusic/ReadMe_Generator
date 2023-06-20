@@ -47,3 +47,20 @@ const questions = [
       message: 'What is your email address?'
     }
   ];
+
+  // Generates ReadME as the file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+      err ? console.error(err) : console.log('README file created successfully!')
+    );
+  }
+  
+  // Calls app to be initialized
+  function init() {
+    inquirer.prompt(questions).then((answers) => {
+      const markdown = generateMarkdown(answers);
+      writeToFile('README.md', markdown);
+    });
+  }
+  
+  init();
