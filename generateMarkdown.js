@@ -1,3 +1,30 @@
+// User prompt answer creates a badge according to license selected
+function renderLicenseBadge(license) {
+  if (!license || license === 'None') {
+    return '';
+  }
+  return `[![License: ${license}](https://img.shields.io/badge/License-${license}-brightgreen.svg)](https://opensource.org/licenses/${license})`;
+}
+
+// License link is generated to work with the badge
+function renderLicenseLink(license) {
+  if (!license || license === 'None') {
+    return '';
+  }
+  return `- [License](#license)`;
+}
+
+// License section renders with text advise
+function renderLicenseSection(license) {
+  if (!license || license === 'None') {
+    return '';
+  }
+
+  return `## License
+
+This project is licensed under the ${license} License - see the [LICENSE](LICENSE) file for details.`;
+}
+
 
 // Generates markdown for README
 function generateMarkdown(data) {
@@ -44,3 +71,5 @@ For any questions, please contact me:
 ${renderLicenseSection(data.license)}
 `;
 }
+
+module.exports = generateMarkdown;
