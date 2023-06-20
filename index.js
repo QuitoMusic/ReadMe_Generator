@@ -1,7 +1,7 @@
 // Packages
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./generateMarkdown');
+const generateMarkdown = require('./Develop/utils/generateMarkdown');
 
 // Questions for user input
 const questions = [
